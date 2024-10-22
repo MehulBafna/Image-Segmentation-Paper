@@ -4,7 +4,6 @@ import os
 
 OPENSLIDE_PATH = r'C:\Program Files\Openslide\openslide-bin-4.0.0.6-windows-x64\openslide-bin-4.0.0.6-windows-x64\bin'
 
-import os
 if hasattr(os, 'add_dll_directory'):
     # Windows
     with os.add_dll_directory(OPENSLIDE_PATH):
