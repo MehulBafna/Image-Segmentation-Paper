@@ -40,7 +40,7 @@ class PatchExtractor:
         self.slide.close()
 
 
-# Usage example
+# Example
 slide_path = r"C:\Users\Mehul\Documents\MATLAB\SSES-1 10_J-21-152_100_Pig_HE_RUN23__liver_MAX.ndpi"
 output_folder = r'C:\Users\Mehul\Documents\MATLAB\Patched_Images_uncompressed'
 
