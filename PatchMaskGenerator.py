@@ -5,6 +5,16 @@ import cv2
 import ast
 import openslide
 
+OPENSLIDE_PATH = r'C:\Program Files\Openslide\openslide-bin-4.0.0.6-windows-x64\openslide-bin-4.0.0.6-windows-x64\bin'
+
+import os
+if hasattr(os, 'add_dll_directory'):
+    # Windows
+    with os.add_dll_directory(OPENSLIDE_PATH):
+        import openslide
+else:
+    import openslide
+    
 class PatchMaskGenerator:
     def __init__(self, slide_path, csv_file, image_directory, mask_directory, num_patches_x=16, num_patches_y=16):
         self.slide = openslide.OpenSlide(slide_path)
