@@ -33,7 +33,6 @@ class PatchExtractor:
                 y = j * self.patch_height
                 region_width = min(self.patch_width, self.width - x)
                 region_height = min(self.patch_height, self.height - y)
-                print(f"Reading patch at coordinates: ({x}, {y}), width: {region_width}, height: {region_height}")
                 region = self.slide.read_region((x, y), 0, (region_width, region_height))
                 region = region.convert("RGB")
 
@@ -50,7 +49,7 @@ class PatchExtractor:
 
 #slide_path to be replaced with actual path where the .ndpi file is stored
 slide_path = r"C:\Users\mehul\Downloads\SSES2021 14 LIVER LL 14 7 21_J-21-157_4_Pig_GS 1-10000 + PSR_RUN08_Part II_Liver LL 0h_VAB.ndpi"
-output_folder = "output/PSR_images_test"
+output_folder = "images"
 patch_extractor = PatchExtractor(slide_path, output_folder)
 patch_extractor.extract_patches()
 patch_extractor.close()
