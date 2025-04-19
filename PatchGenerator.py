@@ -48,7 +48,7 @@ class PatchExtractor:
         self.slide.close()
 
 #slide_path to be replaced with actual path where the .ndpi file is stored
-slide_path = r"C:\Users\mehul\Downloads\SSES2021 14 LIVER LL 14 7 21_J-21-157_4_Pig_GS 1-10000 + PSR_RUN08_Part II_Liver LL 0h_VAB.ndpi"
+slide_path = r"SSES2021 14 LIVER LL 14 7 21_J-21-157_4_Pig_GS 1-10000 + PSR_RUN08_Part II_Liver LL 0h_VAB.ndpi"
 output_folder = "images"
 patch_extractor = PatchExtractor(slide_path, output_folder)
 patch_extractor.extract_patches()
