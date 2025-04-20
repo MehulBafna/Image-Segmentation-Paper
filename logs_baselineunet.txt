@@ -1,0 +1,84 @@
+Training Fold 1/5
+
+Fold 1 - Best Model Results:
+
+Class          Dice     TPR      IoU
+-------------------------------------------
+Background    0.9907    0.9839    0.9816
+Portal Vein   0.6912    0.8765    0.5281
+Central Vein  0.7533    0.8054    0.6042
+Artery        0.6852    0.8559    0.5212
+Bile Duct     0.7024    0.6164    0.5413
+
+Mean Vessel Metrics:
+Dice: 0.7080
+TPR: 0.7885
+IoU: 0.5487
+
+Training Fold 2/5
+
+Fold 2 - Best Model Results:
+
+Class          Dice     TPR      IoU
+-------------------------------------------
+Background    0.9832    0.9937    0.9669
+Portal Vein   0.6736    0.8638    0.5078
+Central Vein  0.7283    0.7873    0.5726
+Artery        0.6814    0.8493    0.5167
+Bile Duct     0.7023    0.6345    0.5411
+
+Mean Vessel Metrics:
+Dice: 0.6964
+TPR: 0.7837
+IoU: 0.5346
+
+Training Fold 3/5
+
+Fold 3 - Best Model Results:
+
+Class          Dice     TPR      IoU
+-------------------------------------------
+Background    0.9923    0.9877    0.9847
+Portal Vein   0.6725    0.8228    0.5066
+Central Vein  0.7351    0.7986    0.5812
+Artery        0.7048    0.7983    0.5441
+Bile Duct     0.7157    0.6746    0.5573
+
+Mean Vessel Metrics:
+Dice: 0.7070
+TPR: 0.7736
+IoU: 0.5473
+
+Training Fold 4/5
+
+Fold 4 - Best Model Results:
+
+Class          Dice     TPR      IoU
+-------------------------------------------
+Background    0.9909    0.9912    0.9819
+Portal Vein   0.7419    0.7978    0.5897
+Central Vein  0.6685    0.7832    0.5021
+Artery        0.7327    0.8185    0.5782
+Bile Duct     0.6958    0.7251    0.5335
+
+Mean Vessel Metrics:
+Dice: 0.7098
+TPR: 0.7815
+IoU: 0.5509
+
+Training Fold 5/5
+
+Fold 5 - Best Model Results:
+
+Class          Dice     TPR      IoU
+-------------------------------------------
+Background    0.9902    0.9892    0.9806
+Portal Vein   0.7159    0.8112    0.5575
+Central Vein  0.7487    0.7659    0.5983
+Artery        0.7073    0.8182    0.5471
+Bile Duct     0.7188    0.7096    0.5610
+
+Mean Vessel Metrics:
+Dice: 0.7227
+TPR: 0.7762
+IoU: 0.5661
