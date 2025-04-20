@@ -81,8 +81,8 @@ class LiverDataset(Dataset):
         return image, mask
 
 def load_data(data_dir, batch_size, transform=None, val_split=0.2):
-    image_paths = sorted([os.path.join(data_dir, "PSR_image", f) for f in os.listdir(os.path.join(data_dir, "PSR_image"))])
-    mask_paths = sorted([os.path.join(data_dir, "PSR_mask", f) for f in os.listdir(os.path.join(data_dir, "PSR_mask"))])
+    image_paths = sorted([os.path.join(data_dir, "images", f) for f in os.listdir(os.path.join(data_dir, "images"))])
+    mask_paths = sorted([os.path.join(data_dir, "masks", f) for f in os.listdir(os.path.join(data_dir, "masks"))])
     dataset = LiverDataset(image_paths, mask_paths, transform=transform)
     val_size = int(len(dataset) * val_split)
     train_size = len(dataset) - val_size
@@ -357,7 +357,7 @@ def split_test_data(image_paths, mask_paths, test_ratio=0.1, random_seed=42):
 
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    
+    # data_dir path needs to be changed to the directory where images folder is stored
     data_dir = '/work/xi47luy'
     
     image_paths = sorted([os.path.join(data_dir, "PSR_image", f) for f in os.listdir(os.path.join(data_dir, "PSR_image"))])
@@ -365,7 +365,6 @@ def main():
     
     train_images, train_masks, test_images, test_masks = split_test_data(image_paths, mask_paths, test_ratio=0.1)
     
-    # Save test set filenames to testset.txt
     with open('testset.txt', 'w') as f:
         f.write(f"# Total training samples: {len(train_images)}\n")
         f.write(f"# Total test samples: {len(test_images)}\n")
@@ -373,7 +372,6 @@ def main():
         for img_path in test_images:
             f.write(f"{os.path.basename(img_path)}\n")
     
-    # Run k-fold CV
     k_fold_cross_validation(
         train_images=train_images,
         train_masks=train_masks,
@@ -463,17 +461,13 @@ def k_fold_cross_validation(train_images, train_masks, device, n_splits=5, batch
             fold=fold
         )
         
-        # Save the best model for this fold
         torch.save(best_model, f'best_model_{fold+1}.pth')
         
-        # Load the best model and evaluate on validation set
         model.load_state_dict(best_model)
         model.eval()
         
-        # Evaluate best model on validation set
         val_dice, val_tpr, val_iou = evaluate_model_with_metrics(model, val_loader, device)
         
-        # Print metrics for the best model on the validation set
         print(f"\nFold {fold + 1} - Best Model Results:")
         print("\nClass          Dice     TPR      IoU")
         print("-------------------------------------------")
@@ -489,7 +483,6 @@ def k_fold_cross_validation(train_images, train_masks, device, n_splits=5, batch
                 mean_vessel_metrics["iou"] += val_iou[c]
                 mean_vessel_metrics["count"] += 1
         
-        # Print mean vessel metrics
         print("\nMean Vessel Metrics:")
         print(f"Dice: {mean_vessel_metrics['dice'] / mean_vessel_metrics['count']:.4f}")
         print(f"TPR: {mean_vessel_metrics['tpr'] / mean_vessel_metrics['count']:.4f}")
