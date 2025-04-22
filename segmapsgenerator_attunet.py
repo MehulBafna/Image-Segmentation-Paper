@@ -30,7 +30,7 @@ def save_colored_masks(predicted_mask, original_size, output_dir, file_name):
 # Adjust paths as per directory
 def main():
     images_test_path = "images"
-    output_masks_path = "testset1"
+    output_masks_path = "testset"
     model_path = "unet_seb_att.pth" 
 
     if not os.path.exists(model_path) or not os.path.exists(images_test_path):
