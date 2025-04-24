@@ -31,7 +31,7 @@ def save_colored_masks(predicted_mask, original_size, output_dir, file_name):
 def main():
     images_test_path = "images"
     output_masks_path = "testset"
-    model_path = "baseline_unet.pth" 
+    model_path = "Baseline.pth" 
 
     if not os.path.exists(model_path) or not os.path.exists(images_test_path):
         return
