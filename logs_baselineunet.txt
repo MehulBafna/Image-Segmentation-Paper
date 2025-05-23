@@ -1,19 +1,19 @@
-Training Fold 1/5
+Training Fold 1/5                                                                                            
 
 Fold 1 - Best Model Results:
 
 Class          Dice     TPR      IoU
 -------------------------------------------
-Background    0.9907    0.9839    0.9816
-Portal Vein   0.6912    0.8765    0.5281
-Central Vein  0.7533    0.8054    0.6042
-Artery        0.6852    0.8559    0.5212
-Bile Duct     0.7024    0.6164    0.5413
+Background    0.9879    0.9822    0.9761
+Portal Vein   0.7643    0.8154    0.6185
+Central Vein  0.8342    0.8323    0.7156
+Artery        0.7581    0.8105    0.6104
+Bile Duct     0.7764    0.6946    0.6345
 
 Mean Vessel Metrics:
-Dice: 0.7080
-TPR: 0.7885
-IoU: 0.5487
+Dice: 0.7833
+TPR: 0.7882
+IoU: 0.6448
 
 Training Fold 2/5
 
@@ -21,16 +21,16 @@ Fold 2 - Best Model Results:
 
 Class          Dice     TPR      IoU
 -------------------------------------------
-Background    0.9832    0.9937    0.9669
-Portal Vein   0.6736    0.8638    0.5078
-Central Vein  0.7283    0.7873    0.5726
-Artery        0.6814    0.8493    0.5167
-Bile Duct     0.7023    0.6345    0.5411
+Background    0.9901    0.9895    0.9804
+Portal Vein   0.7727    0.8379    0.6296
+Central Vein  0.8079    0.7928    0.6777
+Artery        0.7833    0.8562    0.6438
+Bile Duct     0.7492    0.6979    0.5989
 
 Mean Vessel Metrics:
-Dice: 0.6964
-TPR: 0.7837
-IoU: 0.5346
+Dice: 0.7783
+TPR: 0.7962
+IoU: 0.6375
 
 Training Fold 3/5
 
@@ -38,16 +38,16 @@ Fold 3 - Best Model Results:
 
 Class          Dice     TPR      IoU
 -------------------------------------------
-Background    0.9923    0.9877    0.9847
-Portal Vein   0.6725    0.8228    0.5066
-Central Vein  0.7351    0.7986    0.5812
-Artery        0.7048    0.7983    0.5441
-Bile Duct     0.7157    0.6746    0.5573
+Background    0.9932    0.9895    0.9865
+Portal Vein   0.7461    0.8621    0.5950
+Central Vein  0.8123    0.7427    0.6839
+Artery        0.7818    0.8469    0.6418
+Bile Duct     0.7557    0.7329    0.6073
 
 Mean Vessel Metrics:
-Dice: 0.7070
-TPR: 0.7736
-IoU: 0.5473
+Dice: 0.7739
+TPR: 0.7961
+IoU: 0.6320
 
 Training Fold 4/5
 
@@ -55,16 +55,16 @@ Fold 4 - Best Model Results:
 
 Class          Dice     TPR      IoU
 -------------------------------------------
-Background    0.9909    0.9912    0.9819
-Portal Vein   0.7419    0.7978    0.5897
-Central Vein  0.6685    0.7832    0.5021
-Artery        0.7327    0.8185    0.5782
-Bile Duct     0.6958    0.7251    0.5335
+Background    0.9907    0.9887    0.9816
+Portal Vein   0.8239    0.8253    0.7005
+Central Vein  0.7388    0.8067    0.5858
+Artery        0.8091    0.7985    0.6794
+Bile Duct     0.7883    0.7361    0.6506
 
 Mean Vessel Metrics:
-Dice: 0.7098
-TPR: 0.7815
-IoU: 0.5509
+Dice: 0.7900
+TPR: 0.7917
+IoU: 0.6541
 
 Training Fold 5/5
 
@@ -72,13 +72,13 @@ Fold 5 - Best Model Results:
 
 Class          Dice     TPR      IoU
 -------------------------------------------
-Background    0.9902    0.9892    0.9806
-Portal Vein   0.7159    0.8112    0.5575
-Central Vein  0.7487    0.7659    0.5983
-Artery        0.7073    0.8182    0.5471
-Bile Duct     0.7188    0.7096    0.5610
+Background    0.9819    0.9892    0.9644
+Portal Vein   0.7939    0.8203    0.6582
+Central Vein  0.8289    0.7284    0.7078
+Artery        0.7962    0.7973    0.6614
+Bile Duct     0.8113    0.7253    0.6825
 
 Mean Vessel Metrics:
-Dice: 0.7227
-TPR: 0.7762
-IoU: 0.5661
+Dice: 0.8076
+TPR: 0.7678
+IoU: 0.6775
