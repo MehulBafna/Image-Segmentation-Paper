@@ -2,24 +2,6 @@
 
 This project provides a complete pipeline to perform **whole slide image (WSI) segmentation** using a patch-based approach. The pipeline consists of patch generation, vessel and lobule segmentation using separate U-Net models, blending their outputs, overlaying on original image patches, and finally stitching everything together into a complete segmentation output.
 
----
-
-## 🧩 Project Structure
-
-/Image‑Segmentation‑Paper (repository root)
-│
-├── Data Modeling/ # Scripts or notebooks for modeling data
-├── Data Preparation/ # Preprocessing and data cleaning steps
-├── Dataset/ # Raw or processed datasets used in the project
-├── Morphometry/ # Scripts for morphological feature extraction
-├── PostProcessing/ # Steps to refine segmentation outputs
-├── README.md # Project overview and documentation
-├── logs_baselineunet.txt # Training logs for baseline U‑Net model
-└── logs_lobulemodel.txt # Training logs for lobule segmentation model
-
-
----
-
 ## 📌 Pipeline Overview
 
 ### 1. **Patch Generator**
@@ -61,7 +43,6 @@ This project provides a complete pipeline to perform **whole slide image (WSI) s
   - Reconstructs the full WSI by stitching all the overlayed patches.
   - Outputs a complete segmentation map for the entire slide.
 
----
 
 ## 💻 Software Environment
 
@@ -70,15 +51,4 @@ This project provides a complete pipeline to perform **whole slide image (WSI) s
 | Python          | 3.10       |
 | PyTorch         | 2.6        |
 | CUDA            | 11.8       |
-
-> **Note**: Ensure all required Python libraries are installed. A `requirements.txt` file can be generated if needed.
-
----
-
-## 🚀 Getting Started
-
-### Clone the Repository
-```bash
-git clone https://github.com/yourusername/wsi-segmentation-pipeline.git
-cd wsi-segmentation-pipeline
 
