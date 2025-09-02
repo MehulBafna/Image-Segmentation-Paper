@@ -6,6 +6,17 @@ This project provides a complete pipeline to perform **whole slide image (WSI) s
 
 ## 🧩 Project Structure
 
+/Image‑Segmentation‑Paper (repository root)
+│
+├── Data Modeling/ # Scripts or notebooks for modeling data
+├── Data Preparation/ # Preprocessing and data cleaning steps
+├── Dataset/ # Raw or processed datasets used in the project
+├── Morphometry/ # Scripts for morphological feature extraction
+├── PostProcessing/ # Steps to refine segmentation outputs
+├── README.md # Project overview and documentation
+├── logs_baselineunet.txt # Training logs for baseline U‑Net model
+└── logs_lobulemodel.txt # Training logs for lobule segmentation model
+
 
 ---
 
