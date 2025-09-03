@@ -60,7 +60,7 @@ def convert_black_to_white(mask_dir):
 def main():
     images_test_path = r"C:\Users\mehul\P2-P10-Project\data\patch4"
     output_masks_path = r"C:\Users\mehul\P2-P10-Project\data\lobulepred4"
-    model_path = r"C:\Users\mehul\P2-P10-Project\data\best_binary_model_fold_1.pth"
+    model_path = r"C:\Users\mehul\P2-P10-Project\data\LobuleModel.pth"
 
     if not os.path.exists(model_path):
         print(f"Model path not found: {model_path}")
