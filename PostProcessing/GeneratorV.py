@@ -82,7 +82,7 @@ def modify_mask(pred_mask, convert_blue_green_to_white=False):
 def main():
     images_test_path = r"C:\Users\mehul\P2-P10-Project\data\batchpatch4"
     output_masks_path = r"C:\Users\mehul\P2-P10-Project\data\batchpred4"
-    model_path = r"C:\Users\mehul\P2-P10-Project\baseline_unet.pth"
+    model_path = r"C:\Users\mehul\P2-P10-Project\LobuleModel.pth"
 
     if not os.path.exists(model_path) or not os.path.exists(images_test_path):
         return
