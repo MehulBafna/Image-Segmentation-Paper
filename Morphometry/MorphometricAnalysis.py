@@ -201,11 +201,7 @@ def create_morphometric_analysis_plot(structure_data, centroids_by_structure, re
     for name, data in structure_data.items():
         if data['count'] > 0:
             # Correct for half resolution then convert to μm
-            if name == 'Lobule':
-                # Special scaling for lobules: +10% after resolution correction
-                major_axes = [d * 2 * 1.1 * pixel_to_um for d in data['major_axis_lengths']]
-            else:
-                major_axes = [d * 2 * pixel_to_um for d in data['major_axis_lengths']]
+            major_axes = [d * 2 * pixel_to_um for d in data['major_axis_lengths']]
             major_axis_dict[name] = major_axes
             color_dict[name] = structure_colors.get(name, 'gray')
     
@@ -244,11 +240,7 @@ def create_morphometric_analysis_plot(structure_data, centroids_by_structure, re
     for name, data in structure_data.items():
         if data['count'] > 0:
             # Correct for half resolution then convert to μm
-            if name == 'Lobule':
-                # Special scaling for lobules: +10% after resolution correction
-                minor_axes = [d * 2 * 1.1 * pixel_to_um for d in data['minor_axis_lengths']]
-            else:
-                minor_axes = [d * 2 * pixel_to_um for d in data['minor_axis_lengths']]
+            minor_axes = [d * 2 * pixel_to_um for d in data['minor_axis_lengths']]
             minor_axis_dict[name] = minor_axes
             color_dict[name] = structure_colors.get(name, 'gray')
     
@@ -286,11 +278,7 @@ def create_morphometric_analysis_plot(structure_data, centroids_by_structure, re
     for name, data in structure_data.items():
         if data['count'] > 0:
             # Correct for half resolution then convert to μm
-            if name == 'Lobule':
-                # Special scaling for lobules: +10% after resolution correction
-                perimeters = np.array(data['perimeters']) * 2 * 1.1 * pixel_to_um
-            else:
-                perimeters = np.array(data['perimeters']) * 2 * pixel_to_um
+            perimeters = np.array(data['perimeters']) * 2 * pixel_to_um
             perimeter_dict[name] = perimeters
             color_dict[name] = structure_colors.get(name, 'gray')
     
@@ -328,11 +316,7 @@ def create_morphometric_analysis_plot(structure_data, centroids_by_structure, re
     for name, data in structure_data.items():
         if data['count'] > 0:
             # Correct for half resolution then convert to μm²
-            if name == 'Lobule':
-                # Special scaling for lobules: +21% after resolution correction
-                areas = np.array(data['areas']) * 4 * 1.21 * (pixel_to_um**2)
-            else:
-                areas = np.array(data['areas']) * 4 * (pixel_to_um**2)
+            areas = np.array(data['areas']) * 4 * (pixel_to_um**2)
             area_dict[name] = areas
             color_dict[name] = structure_colors.get(name, 'gray')
     
@@ -397,21 +381,12 @@ def save_structure_csvs(structure_data, regions_by_structure, output_dir='medica
                 else:
                     x, y = 0, 0
                 
-                # Calculate measurements in μm and μm²
-                if structure_name == 'Lobule':
-                    # Special scaling for lobules: +10% linear, +21% area
-                    feret_major_um = feret_major * 2 * 1.1 * pixel_to_um
-                    feret_minor_um = feret_minor * 2 * 1.1 * pixel_to_um
-                    equiv_diam_um = data['equivalent_diameters'][i] * 2 * 1.1 * pixel_to_um
-                    perimeter_um = data['perimeters'][i] * 2 * 1.1 * pixel_to_um
-                    area_um2 = data['areas'][i] * 4 * 1.21 * (pixel_to_um**2)
-                else:
-                    # Regular scaling for other structures
-                    feret_major_um = feret_major * 2 * pixel_to_um
-                    feret_minor_um = feret_minor * 2 * pixel_to_um
-                    equiv_diam_um = data['equivalent_diameters'][i] * 2 * pixel_to_um
-                    perimeter_um = data['perimeters'][i] * 2 * pixel_to_um
-                    area_um2 = data['areas'][i] * 4 * (pixel_to_um**2)
+                # Calculate measurements in μm and μm² (same scaling for all structures)
+                feret_major_um = feret_major * 2 * pixel_to_um
+                feret_minor_um = feret_minor * 2 * pixel_to_um
+                equiv_diam_um = data['equivalent_diameters'][i] * 2 * pixel_to_um
+                perimeter_um = data['perimeters'][i] * 2 * pixel_to_um
+                area_um2 = data['areas'][i] * 4 * (pixel_to_um**2)
                 
                 row = {
                     'ID': i + 1,
@@ -464,9 +439,9 @@ def save_morphometric_analysis(structure_data, centroids_by_structure, regions_b
 def main():
     """Run the final plotting with combined approach, large fonts, and measurements in μm"""
     
-    # Adjust path to the images accordingly
+    # Path to the images
     lobule_image_path = "/work/xi47luy/smooth_traversal_no_holes.jpg"
-    blended_image_path = "/work/xi47luy/blend2.jpg"
+    blended_image_path = "/work/xi47luy/blend4.jpg"
     
     # Define color definitions for structure identification
     # Using area-based filtering in pixels²
